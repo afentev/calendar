@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.14)
+project(untitled3)
+
+set(CMAKE_CXX_STANDARD 20)
+
+set(SOURCE_FILES ColoredLines.cpp)
+
+add_executable(untitled3 ${SOURCE_FILES})
+set(SFML_ROOT "/home/afentev/CLionProjects/untitled3/SFML-2.5.1")
+
+set(CMAKE_MODULE_PATH "/home/afentev/CLionProjects/untitled3/SFML-2.5.1/cmake/Modules")
+
+find_package(SFML 2.5.1 REQUIRED network audio graphics window system)
+if(SFML_FOUND)
+    include_directories(${SFML_INCLUDE_DIR})
+endif()
+
+target_link_libraries(untitled3 sfml-graphics sfml-audio)
